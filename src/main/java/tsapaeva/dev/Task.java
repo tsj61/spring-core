@@ -1,11 +1,18 @@
 package tsapaeva.dev;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+import java.util.concurrent.ThreadLocalRandom;
+
+@Component
+@Scope("prototype")
 public class Task {
     private final String name;
     private final Long duration;
 
     public Task() {
-        this.name = "task";
+        this.name = "task" + ThreadLocalRandom.current().nextInt();
         this.duration = 60L;
     }
 
