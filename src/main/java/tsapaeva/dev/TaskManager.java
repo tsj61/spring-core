@@ -2,7 +2,6 @@ package tsapaeva.dev;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -14,12 +13,12 @@ public class TaskManager {
     }
 
     @PostConstruct
-    public void postConstruct(){
+    public void postConstruct() {
         System.out.println("TaskManager postConstruct()");
     }
 
     @PreDestroy
-    public void preDestroy(){
+    public void preDestroy() {
         System.out.println("TaskManager preDestroy()");
     }
 
