@@ -3,6 +3,7 @@ package tsapaeva.dev;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import org.springframework.stereotype.Component;
+import tsapaeva.dev.aop.Loggable;
 
 @Component
 public class TaskManager {
@@ -22,7 +23,13 @@ public class TaskManager {
         System.out.println("TaskManager preDestroy()");
     }
 
-    public void printTask() {
+    @Loggable(value = "ERROR", times = 5)
+    public Integer printTask() {
         System.out.println("Current task: " + task.toString());
+        return task.getDuration();
+    }
+
+    public void throwEx(){
+        throw new RuntimeException("Exception in TaskManager");
     }
 }

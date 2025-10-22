@@ -11,13 +11,13 @@ import java.util.Map;
 @Component
 public class Task {
     private final String name;
-    private final Long duration;
+    private final Integer duration;
     private final List<String> listValues;
     private final Map<String, Integer> mapValues;
 
     public Task(
             @Value("${task.name}") String name,
-            @Value("${task.duration}") Long duration,
+            @Value("${task.duration}") Integer duration,
             @Value("#{'${task.list-values}'.split(',')}") List<String> listValues,
             @Value("#{${task.map-values}}") Map<String, Integer> mapValues) {
         this.name = name;
@@ -40,7 +40,7 @@ public class Task {
         return name;
     }
 
-    public Long getDuration() {
+    public Integer getDuration() {
         return duration;
     }
 
