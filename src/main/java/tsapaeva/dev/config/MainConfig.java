@@ -1,4 +1,4 @@
-package tsapaeva.dev;
+package tsapaeva.dev.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
