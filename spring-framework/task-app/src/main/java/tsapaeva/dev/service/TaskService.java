@@ -1,9 +1,9 @@
-package tsapaeva.dev.task_app.service;
+package tsapaeva.dev.service;
 
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
-import tsapaeva.dev.task_app.eventlistener.event.TaskCompletedEvent;
-import tsapaeva.dev.task_app.model.Task;
+import tsapaeva.dev.eventlistener.event.TaskCompletedEvent;
+import tsapaeva.dev.model.Task;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -58,14 +58,20 @@ public class TaskService {
     }
 
     public void loadTasks(String filePath) {
-        try (FileInputStream fis = new FileInputStream(filePath)) {
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            tasks.addAll((List<Task>) ois.readObject());
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream(filePath)) {
+
+            if (inputStream == null) {
+                System.out.println("File not found in loadTasks(): " + filePath);
+                return;
+            }
+
+            try (ObjectInputStream ois = new ObjectInputStream(inputStream)) {
+                tasks.addAll((List<Task>) ois.readObject());
+                System.out.println("Loaded " + tasks.size() + " tasks from " + filePath);
+            }
 
         } catch (ClassNotFoundException e) {
             System.out.println("ClassNotFoundException in loadTasks(): " + e.getMessage());
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found in loadTasks(): " + e.getMessage());
         } catch (IOException e) {
             System.out.println("Exception in loadTasks(): " + e.getMessage());
         }

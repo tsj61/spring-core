@@ -1,10 +1,10 @@
-package tsapaeva.dev.task_app.eventlistener.listener;
+package tsapaeva.dev.eventlistener.listener;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
-import tsapaeva.dev.task_app.eventlistener.event.SaveTaskEvent;
-import tsapaeva.dev.task_app.service.TaskService;
+import tsapaeva.dev.eventlistener.event.SaveTaskEvent;
+import tsapaeva.dev.service.TaskService;
 
 @Component
 public class SaveTaskEventListener {

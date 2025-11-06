@@ -1,4 +1,4 @@
-package tsapaeva.dev.task_app.eventlistener.event;
+package tsapaeva.dev.eventlistener.event;
 
 import org.springframework.context.ApplicationEvent;
 

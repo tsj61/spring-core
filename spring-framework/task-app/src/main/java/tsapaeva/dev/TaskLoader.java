@@ -1,10 +1,10 @@
-package tsapaeva.dev.task_app;
+package tsapaeva.dev;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
-import tsapaeva.dev.task_app.service.TaskService;
+import tsapaeva.dev.service.TaskService;
 
 @Component
 @Profile("load")

@@ -1,8 +1,8 @@
-package tsapaeva.dev.task_app;
+package tsapaeva.dev;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import tsapaeva.dev.task_app.eventlistener.event.SaveTaskEvent;
-import tsapaeva.dev.task_app.service.TaskService;
+import tsapaeva.dev.eventlistener.event.SaveTaskEvent;
+import tsapaeva.dev.service.TaskService;
 
 import java.util.Scanner;
 

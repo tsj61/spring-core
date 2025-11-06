@@ -9,6 +9,5 @@ public class Main {
         AnnotationConfigApplicationContext annotationConfigApplicationContext = new AnnotationConfigApplicationContext("tsapaeva.dev");
         OperationsConsoleListener operationsConsoleListener = annotationConfigApplicationContext.getBean(OperationsConsoleListener.class);
         operationsConsoleListener.start();
-
     }
 }

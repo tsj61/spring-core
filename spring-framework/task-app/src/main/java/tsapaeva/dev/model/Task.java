@@ -1,4 +1,4 @@
-package tsapaeva.dev.task_app.model;
+package tsapaeva.dev.model;
 
 import java.io.Serial;
 import java.io.Serializable;
