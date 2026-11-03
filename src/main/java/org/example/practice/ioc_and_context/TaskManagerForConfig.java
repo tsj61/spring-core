@@ -1,15 +1,13 @@
-package org.example.example.practice.ioc_and_context;
+package org.example.practice.ioc_and_context;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-@Component
-public class TaskManager {
+public class TaskManagerForConfig {
 
-    private final Task task;
+    private final TaskForConfig task;
 
     @Autowired
-    public TaskManager(Task task) {
+    public TaskManagerForConfig(TaskForConfig task) {
         this.task = task;
     }
 

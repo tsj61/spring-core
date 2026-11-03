@@ -1,4 +1,4 @@
-package org.example.example.practice.ioc_and_context;
+package org.example.practice.ioc_and_context;
 
 import org.springframework.stereotype.Component;
 
