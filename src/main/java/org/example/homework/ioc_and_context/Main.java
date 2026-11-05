@@ -1,4 +1,4 @@
-package org.example.example.homework.ioc_and_context;
+package org.example.homework.ioc_and_context;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
