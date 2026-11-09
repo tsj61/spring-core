@@ -1,15 +1,12 @@
 package org.example.practice.bean_scope;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
     static void main() {
-        System.out.println("Main with config");
-        mainWithConfig();
-    }
 
-    static void mainWithConfig() {
-        AnnotationConfigApplicationContext applicationContext =
+        ApplicationContext applicationContext =
                 new AnnotationConfigApplicationContext("org.example.practice.bean_scope");
 
         Task task1 = applicationContext.getBean(Task.class);
